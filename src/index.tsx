@@ -1,27 +1,11 @@
-import styled from 'styled-components';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
 
-interface Props {
-  outlined?: boolean;
-}
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
 
-export default styled.button<Props>`
-  background: ${(props) => (props.outlined ? 'transparent' : 'var(--twitter)')};
-  color: ${(props) => (props.outlined ? 'var(--twitter)' : 'var(--white)')};
-  border: ${(props) => (props.outlined ? '1px solid var(--twitter)' : 'none')};
-
-  padding: 16px;
-  border-radius: 25px;
-
-  font-weight: bold;
-  font-size: 15px;
-
-  cursor: pointer;
-  outline: 0;
-
-  &:hover {
-    background: ${(props) =>
-      props.outlined
-        ? 'var(--twitter-dark-hover)'
-        : 'var(--twitter-light-hover)'};
-  }
-`;
